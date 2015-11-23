@@ -1,0 +1,6 @@
+** Intent
+    -> reuse and share objects that are expensive to create.
+
+** Example
+    Reusable.pm is class for store three variable
+    ReusePool.pm is create pool of Reusable object

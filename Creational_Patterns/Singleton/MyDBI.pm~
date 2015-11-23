@@ -1,0 +1,34 @@
+package MyDBI;
+use strict;
+use warnings;
+use DBI;
+use 5.010;
+
+my $dns   = 'dbi:mysql:Nirav_Demo:192.168.1.225:3306';
+my $uname = 'root';
+my $pass  = 'be4us$';
+
+LOCAL:
+{
+    state $dbh = DBI->connect( $dns, $uname, $pass ) or die( 'could not connect to database.' ); 
+    sub _data_connection {
+        return $dbh;
+    }
+}
+
+sub new {
+    my ( $class ) = @_;
+    print "Database Connected.\n";
+    return bless _data_connection,$class;
+}
+
+sub exists_dbh {
+    my ( $self, $obj ) = @_;
+    if( ref( $obj ) eq 'MyDBI' ) {
+        return 'true';
+    }
+    else {
+        return 'false';
+    }
+}
+1;

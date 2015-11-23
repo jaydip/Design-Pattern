@@ -1,0 +1,7 @@
+** Intent
+    ->  specifying the kind of objects to create using a prototypical instance
+    ->  creating new objects by copying this prototype
+
+** Example
+    Rectangle.pm is a class that return rectange object
+    Square.pm is use Rectangle object and modify structure

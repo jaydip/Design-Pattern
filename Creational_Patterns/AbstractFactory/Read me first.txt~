@@ -1,0 +1,6 @@
+** Intent
+    -> Abstract Factory offers the interface for creating a family of related objects, without explicitly specifying their classes.
+
+** Example
+    AbstractProductA.pm is interface for creating Product A.
+    ProductA1.pm is a implementation of AbstractProductA.pm

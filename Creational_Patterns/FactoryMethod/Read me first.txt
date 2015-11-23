@@ -1,0 +1,10 @@
+** Intent
+    ->  Defines an interface for creating objects, but let subclasses to decide which class to instantiate
+    ->  Refers to the newly created object through a common interface
+
+** Example
+    this example for read and write data to file.
+    FileOperation.pm is a Product in this pattern, it is interface for file operation
+    InitFile.pm is a ConcreteProduct in this pattern, it is implemetation of FileOperation.pm
+    AbstractCreate.pm is a Factory interface for creating object of FileOperation.pm
+    FileCreate.pm is a implementation of AbstractCreate.pm

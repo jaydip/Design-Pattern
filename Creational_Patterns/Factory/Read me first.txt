@@ -1,0 +1,9 @@
+** Intent
+    ->  creates objects without exposing the instantiation logic to the client.
+        refers to the newly created object through a common interface
+
+** Example
+    Product.pm is a interface for creating product
+    ConcreteProduct.pm is a implementation of Product.pm
+    Factory.pm create no of object of product and return to program
+    this program call with Client.pl

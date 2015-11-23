@@ -1,0 +1,10 @@
+** Intent
+    ->  Defines an instance for creating an object but letting subclasses decide which class to instantiate
+    ->  Refers to the newly created object through a common interface
+
+** Example
+    AbstractBuilder.pm is a interface for create product in different partition
+    ConcreteBuilder1.pm is a implementation of AbstractBuilder.pm
+    ConcreteBuilder2.pm is a implementation of AbstractBuilder.pm
+    Director.pm is class for construct builder
+    Product.pm is a class for creating product

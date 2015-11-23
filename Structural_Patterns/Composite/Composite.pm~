@@ -1,0 +1,43 @@
+package Composite;
+use strict;
+use warnings;
+use Component;
+use Data::Dumper::Simple;
+@Composite::ISA = qw / Component /;
+
+sub new {
+    my ($class, $name) = @_;
+    my $self = bless {}, ref($class) || $class;
+    $self->Component::new($name);
+    $self->{ _arr } = [];
+    return $self;
+}
+
+sub add {
+    my ($self, $component) = @_;
+    push $self->{ _arr }[$index] = $component;
+}
+
+sub remove {
+    my ($self, $component) = @_;
+    my $n = -1;
+    my $len = scalar @{$self->{ _arr }};
+    foreach my $c (0..$len-1) {
+        if( $component eq ($self->{ _arr }[$c])->name ) {
+            next;
+        }
+        $self->{ _arr }[++$n] = $self->{ _arr }[$c];   
+    }
+    pop @{ $self->{ _arr } };
+}
+
+sub display {
+    my ($self, $depth) = @_;
+    my @children = @{$self->{ _arr }};
+    print "-" x $depth,$self->name,"\n";
+    foreach my $x (@children)
+    {
+        $x->display($depth + 2);
+    }
+}
+1;
